@@ -41,7 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   visible: provider.getIsGenerating == false,
                   replacement: CircularProgressIndicator(),
                   child: ElevatedButton(
-                    onPressed: () => provider.generateImage(_promptTEC.text),
+                    onPressed: () {
+                      provider.generateImage(_promptTEC.text);
+                      _promptTEC.text = "";
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
                       backgroundColor: Colors.teal,

@@ -51,7 +51,7 @@ class _ImageWidgetState extends State<ImageWidget> {
                 "Generate an image by prompting",
                 style: TextStyle(color: Colors.grey),
               )
-            : Text(widget.provider.getCurrentImage!.prompt),
+            : Text('Last Prompt : ${widget.provider.getCurrentImage!.prompt}'),
       ],
     );
   }
