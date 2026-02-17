@@ -15,7 +15,14 @@ class _FlutterImageGeneratorState extends State<FlutterImageGenerator> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => ImageGeneratingProvider(),
-      child: MaterialApp(home: HomeScreen()),
+      child: MaterialApp(
+        theme: ThemeData(
+          colorSchemeSeed: Colors.teal,
+          scaffoldBackgroundColor: Colors.white,
+        ),
+
+        home: HomeScreen(),
+      ),
     );
   }
 }
