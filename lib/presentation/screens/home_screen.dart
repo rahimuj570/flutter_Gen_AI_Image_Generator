@@ -17,7 +17,31 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
       ),
-      body: Column(),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          spacing: 10,
+          children: [
+            SizedBox(height: 30),
+            TextField(
+              maxLines: 3,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Write your promt here ...',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(),
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('Generate'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
