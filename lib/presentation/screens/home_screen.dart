@@ -42,6 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   replacement: CircularProgressIndicator(),
                   child: ElevatedButton(
                     onPressed: () {
+                      if (_promptTEC.text.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Need to write a prompt first'),
+                          ),
+                        );
+                        return;
+                      }
                       provider.generateImage(_promptTEC.text);
                       _promptTEC.text = "";
                     },
